@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Eventos | Springboot - Thymeleaf</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" data-th-href="@{/css/style.css}">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 <h1>Criar um evento</h1>
 
-<form method="POST" action="/create" data-th-object="${evento}">
+<form method="POST" class="form-produto" action="/create" data-th-object="${evento}">
 
     <input type="hidden" id="id" name="id" data-th-value="${evento.id}">
 
@@ -23,7 +26,7 @@
 
     <input type="time" id="horario" name="horario" data-th-value="${evento.horario}" required>
 
-    <button type="submit">Adicionar evento</button>
+    <button type="submit" class="btn1 btn-form" data-th-text="${evento.id == null} ? 'Adicionar evento' : 'Atualizar evento'"></button>
 </form>
 
 </body>
