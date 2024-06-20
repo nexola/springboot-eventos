@@ -5,6 +5,26 @@
     <title>Lista de eventos</title>
 </head>
 <body>
-
+<h1>Lista de eventos</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Data</th>
+        <th>Titulo</th>
+        <th>Local</th>
+        <th>Redes sociais</th>
+        <th>Site</th>
+        <th>Horário</th>
+    </tr>
+    <tr data-th-each="evento : ${eventos}">
+        <td data-th-text="${evento.id}"></td>
+        <td data-th-text="${{evento.data}}"></td>
+        <td data-th-text="${evento.titulo}"></td>
+        <td data-th-text="${evento.local}"></td>
+        <td data-th-text="${evento.redes_sociais}"></td>
+        <td data-th-text="${evento.site}"></td>
+        <td data-th-text="${evento.horario}"></td>
+    </tr>
+</table>
 </body>
 </html>

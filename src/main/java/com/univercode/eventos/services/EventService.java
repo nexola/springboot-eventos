@@ -16,9 +16,8 @@ public class EventService {
     private EventRepository eventRepository;
 
     @Transactional(readOnly = true)
-    public List<EventDTO> findAll() {
-        List<Event> list = eventRepository.findAll();
-        return list.stream().map(EventDTO::new).toList();
+    public List<Event> findAll() {
+        return eventRepository.findAll();
     }
 
     @Transactional

@@ -1,0 +1,1 @@
+insert into event (data, titulo, local, site, redes_sociais, horario) VALUES ('2021-10-10', 'Evento 1', 'Local 1', 'Site 1', 'Redes Sociais 1', '10:00');
