@@ -3,10 +3,13 @@ package com.univercode.eventos.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public @Data class Event {
@@ -19,7 +22,9 @@ public @Data class Event {
     private String site;
     private LocalTime horario;
 
-    public Event(){}
+    @OneToMany(mappedBy = "event")
+    private List<SocialMedia> redesSociais = new ArrayList<>();
 
+    public Event(){}
 
 }
