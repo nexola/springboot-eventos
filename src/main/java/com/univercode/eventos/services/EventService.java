@@ -4,6 +4,7 @@ import com.univercode.eventos.dtos.EventDTO;
 import com.univercode.eventos.entities.Event;
 import com.univercode.eventos.exceptions.ResourceNotFoundException;
 import com.univercode.eventos.repositories.EventRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -7,19 +7,21 @@
 <body>
 <h1>Criar um evento</h1>
 
-<form method="POST" action="">
+<form method="POST" action="/create" data-th-object="${evento}">
 
-    <input type="date" id="data" name="data" required>
+    <input type="hidden" id="id" name="id" data-th-value="${evento.id}">
 
-    <input type="text" id="titulo" name="titulo" placeholder="Nome do evento" required>
+    <input type="date" id="data" name="data" data-th-value="${evento.data}" required>
 
-    <input type="text" id="local" name="local" placeholder="Local" required>
+    <input type="text" id="titulo" name="titulo" data-th-value="${evento.titulo}" placeholder="Nome do evento" required>
 
-    <input type="text" id="redes_sociais" name="redes_sociais" placeholder="Link da rede social">
+    <input type="text" id="local" name="local" data-th-value="${evento.local}" placeholder="Local" required>
 
-    <input type="text" id="site" name="site" placeholder="Site" required>
+    <input type="text" id="redes_sociais" name="redes_sociais" data-th-value="${evento.redes_sociais}" placeholder="Link da rede social">
 
-    <input type="time" id="horario" name="horario" required>
+    <input type="text" id="site" name="site" data-th-value="${evento.site}" placeholder="Site" required>
+
+    <input type="time" id="horario" name="horario" data-th-value="${evento.horario}" required>
 
     <button type="submit">Adicionar evento</button>
 </form>
