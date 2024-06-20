@@ -2,21 +2,24 @@ package com.univercode.eventos.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-import java.sql.Time;
-import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
-@Entity(name = "tb_event")
+@Entity
 public @Data class Event {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
-    private Instant data;
+    private LocalDate data;
     private String titulo;
     private String local;
     private String site;
-    private Time hora;
+    private LocalTime horario;
+
+    public Event(){}
+
+
 }
