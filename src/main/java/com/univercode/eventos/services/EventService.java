@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -24,18 +22,8 @@ public class EventService {
     }
 
     @Transactional
-    public EventDTO insert(EventDTO dto) {
-        Event event = new Event();
-        dtoToEntity(dto, event);
+    public void insert(Event event) {
         event = eventRepository.save(event);
-        return new EventDTO(event);
-    }
-
-    private void dtoToEntity(EventDTO dto, Event entity) {
-        entity.setData(LocalDate.parse(dto.getData()));
-        entity.setTitulo(dto.getTitulo());
-        entity.setLocal(dto.getLocal());
-        entity.setSite(dto.getSite());
-        entity.setHorario(LocalTime.parse(dto.getHorario()));
+        new EventDTO(event);
     }
 }

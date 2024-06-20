@@ -1,7 +1,6 @@
 package com.univercode.eventos.dtos;
 
 import com.univercode.eventos.entities.Event;
-import com.univercode.eventos.entities.SocialMedia;
 import lombok.Data;
 
 import java.util.List;
@@ -13,7 +12,7 @@ public @Data class EventDTO {
     private String local;
     private String site;
     private String horario;
-    private List<SocialMediaDTO> redes_sociais;
+    private String redes_sociais;
 
     public EventDTO(Event entity) {
         this.id = entity.getId();
@@ -22,9 +21,6 @@ public @Data class EventDTO {
         this.local = entity.getLocal();
         this.site = entity.getSite();
         this.horario = entity.getHorario().toString();
-
-        for (SocialMedia socialMedia : entity.getRedesSociais()) {
-            this.redes_sociais.add(new SocialMediaDTO(socialMedia));
-        }
+        this.redes_sociais = entity.getRedes_sociais();
     }
 }
