@@ -26,7 +26,7 @@
         <td data-th-text="${evento.site}"></td>
         <td data-th-text="${evento.horario}"></td>
         <td class="options"><a data-th-href="@{'/edit/'+${evento.id}}" class="btn-edit btn-option">Editar</a>
-            <a href="" class="btn-delete btn-option">Excluir</a></td>
+            <a data-th-href="@{'/delete/'+${evento.id}}" class="btn-delete btn-option">Excluir</a></td>
     </tr>
 </table>
 
